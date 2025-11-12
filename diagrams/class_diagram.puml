@@ -1,0 +1,78 @@
+@startuml
+title Library Management System - Class Diagram
+
+package "org.example.model" {
+  class Book {
+    - String isbn
+    - String title
+    - String author
+    - int publicationYear
+    + getIsbn()
+    + getTitle()
+  }
+
+  class Patron {
+    - String id
+    - String name
+    - String email
+    - List<String> borrowingHistoryIsbns
+    + recordBorrow(isbn)
+  }
+
+  class Loan {
+    - String isbn
+    - String patronId
+    - LocalDate loanDate
+    - LocalDate returnDate
+    + markReturned()
+  }
+}
+
+package "org.example.service" {
+  class Library {
+    - Map<String,Book> inventory
+    - Map<String,Patron> patrons
+    - Map<String,Loan> activeLoansByIsbn
+    - ReservationManager reservationManager
+    - RecommendationStrategy recommender
+    + addBook(Book)
+    + checkoutBook(isbn, patronId)
+    + returnBook(isbn)
+    + reserveBook(isbn, observer)
+    + recommendFor(patronId)
+  }
+}
+
+package "org.example.observer" {
+  interface BookObserver
+  class ReservationManager {
+    - Map<String,Deque<BookObserver>> reservations
+    + reserve(isbn, observer)
+    + notifyNextAvailable(Book)
+  }
+}
+
+package "org.example.factory" {
+  class LibraryFactory {
+    + createBook(isbn, title, author, year)
+    + createPatron(id, name, email)
+  }
+}
+
+package "org.example.recommendation" {
+  interface RecommendationStrategy
+  class SimpleRecommendationStrategy
+}
+
+' Relationships
+Library "1" o-- "*" Book : inventory
+Library "1" o-- "*" Patron : patrons
+Library "1" o-- "*" Loan : loanHistory
+Library ..> ReservationManager : uses
+Library ..> RecommendationStrategy : depends on
+ReservationManager ..|> BookObserver : notifies
+SimpleRecommendationStrategy ..|> RecommendationStrategy
+LibraryFactory --> Book
+LibraryFactory --> Patron
+
+@enduml
