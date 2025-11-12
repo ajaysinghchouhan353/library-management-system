@@ -1,6 +1,6 @@
-package org.example.recommendation;
+package org.lms.recommendation;
 
-import org.example.model.Book;
+import org.lms.model.Book;
 
 import java.util.List;
 

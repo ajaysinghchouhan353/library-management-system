@@ -1,7 +1,7 @@
 @startuml
 title Library Management System - Class Diagram
 
-package "org.example.model" {
+package "org.lms.model" {
   class Book {
     - String isbn
     - String title
@@ -28,7 +28,7 @@ package "org.example.model" {
   }
 }
 
-package "org.example.service" {
+package "org.lms.service" {
   class Library {
     - Map<String,Book> inventory
     - Map<String,Patron> patrons
@@ -43,7 +43,7 @@ package "org.example.service" {
   }
 }
 
-package "org.example.observer" {
+package "org.lms.observer" {
   interface BookObserver
   class ReservationManager {
     - Map<String,Deque<BookObserver>> reservations
@@ -52,14 +52,14 @@ package "org.example.observer" {
   }
 }
 
-package "org.example.factory" {
+package "org.lms.factory" {
   class LibraryFactory {
     + createBook(isbn, title, author, year)
     + createPatron(id, name, email)
   }
 }
 
-package "org.example.recommendation" {
+package "org.lms.recommendation" {
   interface RecommendationStrategy
   class SimpleRecommendationStrategy
 }

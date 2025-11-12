@@ -1,4 +1,4 @@
-package org.example.model;
+package org.lms.model;
 
 import java.time.LocalDate;
 import java.util.Objects;

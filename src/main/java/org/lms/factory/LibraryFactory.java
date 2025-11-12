@@ -1,7 +1,7 @@
-package org.example.factory;
+package org.lms.factory;
 
-import org.example.model.Book;
-import org.example.model.Patron;
+import org.lms.model.Book;
+import org.lms.model.Patron;
 
 /** Simple factory for creating domain objects. */
 public final class LibraryFactory {

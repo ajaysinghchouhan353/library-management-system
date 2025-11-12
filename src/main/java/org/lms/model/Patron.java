@@ -1,4 +1,4 @@
-package org.example.model;
+package org.lms.model;
 
 import java.util.ArrayList;
 import java.util.Collections;

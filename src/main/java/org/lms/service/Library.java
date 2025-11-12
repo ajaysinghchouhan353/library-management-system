@@ -1,10 +1,10 @@
-package org.example.service;
+package org.lms.service;
 
-import org.example.model.Book;
-import org.example.model.Loan;
-import org.example.model.Patron;
-import org.example.observer.ReservationManager;
-import org.example.recommendation.RecommendationStrategy;
+import org.lms.model.Book;
+import org.lms.model.Loan;
+import org.lms.model.Patron;
+import org.lms.observer.ReservationManager;
+import org.lms.recommendation.RecommendationStrategy;
 
 import java.util.*;
 import java.util.logging.Level;
@@ -107,7 +107,7 @@ public class Library {
         return true;
     }
 
-    public synchronized void reserveBook(String isbn, org.example.observer.BookObserver observer) {
+    public synchronized void reserveBook(String isbn, org.lms.observer.BookObserver observer) {
         if (!inventory.containsKey(isbn)) {
             LOG.warning(() -> "Cannot reserve unknown ISBN=" + isbn);
             return;

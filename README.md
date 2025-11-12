@@ -15,16 +15,16 @@ How to run
 
 ```powershell
 mvn -q -DskipTests package
-java -cp target\LibraryManagementSystem-1.0-SNAPSHOT.jar org.example.Main
+java -cp target\LibraryManagementSystem-1.0-SNAPSHOT.jar org.lms.Main
 ```
 
 Design notes
 - Packages:
-  - `org.example.model` — domain classes (`Book`, `Patron`, `Loan`)
-  - `org.example.service` — `Library` service that orchestrates operations
-  - `org.example.observer` — reservation manager and observer interface
-  - `org.example.factory` — simple factory for creating `Book` and `Patron`
-  - `org.example.recommendation` — strategy interface and simple implementation
+  - `org.lms.model` — domain classes (`Book`, `Patron`, `Loan`)
+  - `org.lms.service` — `Library` service that orchestrates operations
+  - `org.lms.observer` — reservation manager and observer interface
+  - `org.lms.factory` — simple factory for creating `Book` and `Patron`
+  - `org.lms.recommendation` — strategy interface and simple implementation
 
 Applied patterns
 - Factory: `LibraryFactory` centralizes creation of `Book` and `Patron` objects.

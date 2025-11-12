@@ -1,6 +1,6 @@
-package org.example.observer;
+package org.lms.observer;
 
-import org.example.model.Book;
+import org.lms.model.Book;
 
 import java.util.*;
 import java.util.logging.Logger;

@@ -1,11 +1,11 @@
-package org.example;
+package org.lms;
 
-import org.example.factory.LibraryFactory;
-import org.example.model.Book;
-import org.example.model.Patron;
-import org.example.observer.BookObserver;
-import org.example.recommendation.SimpleRecommendationStrategy;
-import org.example.service.Library;
+import org.lms.factory.LibraryFactory;
+import org.lms.model.Book;
+import org.lms.model.Patron;
+import org.lms.observer.BookObserver;
+import org.lms.recommendation.SimpleRecommendationStrategy;
+import org.lms.service.Library;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
