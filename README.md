@@ -33,7 +33,7 @@ Applied patterns
 
 ## Class Diagram
 
-![Library Management System Class Diagram](diagrams/class_diagram.png)
+![Library Management System Class Diagram](diagrams/class-daigram.png)
 
 The class diagram above shows the relationships between the core classes:
 - **Book, Patron, Loan** — model classes representing domain entities
